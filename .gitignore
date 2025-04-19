@@ -1,0 +1,35 @@
+# Java/Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# IDEs and editors
+.vscode/
+*.iml
+.idea/
+*.sw?
+*.swo
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Build tools
+.mvn/
+!**/src/main/**/application.properties
+!**/src/main/**/application.yml
+
+# Temp files
+*.tmp
+*.bak
+*.old
+*.orig
+
+# Maven wrapper
+mvnw
+mvnw.cmd
