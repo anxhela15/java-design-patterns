@@ -1,22 +1,22 @@
 package com.singleton;
 
 public class DoubleCheckSyncSingleton {
-    private static final Object object = new Object();
-    private static DoubleCheckSyncSingleton instance = null;
- 
+    private static volatile DoubleCheckSyncSingleton instance;
+    private static final Object lock = new Object();
     private DoubleCheckSyncSingleton() {}
  
     public static DoubleCheckSyncSingleton getInstance() {
-        if (instance != null) {
-            return instance;
-        }
- 
-        synchronized (object) {
-            if (instance == null) {
-                instance = new DoubleCheckSyncSingleton();
+
+        if(instance == null) {
+            synchronized (lock) {
+                if (instance == null) {
+                    instance = new DoubleCheckSyncSingleton();
+                }
+     
+                return instance;
             }
- 
-            return instance;
         }
+        return instance;
+
     }
 }
