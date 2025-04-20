@@ -14,7 +14,7 @@ public class DoubleCheckSyncSingleton {
                 }
      
                 return instance;
-            }
+            } 
         }
         return instance;
 
